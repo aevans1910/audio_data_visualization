@@ -21,9 +21,6 @@ function render(frequencyArray, ctx, width, height) {
 	const colorStep = 360 / bars
 
     ctx.lineWidth = 3
-    
-    const centerX = width * 0.5
-    const centerY = height * 0.5
 
     const halfW = width * 0.5
     const halfH = height * 0.5
@@ -49,7 +46,20 @@ function render(frequencyArray, ctx, width, height) {
 
         ctx.strokeStyle = `hsla(${colorStep * i}, 100%, 50%, 1.0)`
         ctx.stroke()
-	})
+    })
+    
+    const clockStep = Math.PI * 2 / 12
+    const centerX = width / 2
+    const centerY = height / 2
+
+    for (let i = 0; i < 24; i += 1) {
+        const x = Math.sin(clockStep * i) * 5 * i + centerX
+        const y = Math.cos(clockStep * i) * 5 * i + centerY
+        ctx.beginPath()
+        ctx.arc(x, y, i * 1, 0, Math.PI * 2)
+        ctx.fillStyle = '#000'
+        ctx.fill()
+    }
 }
 
 export default render

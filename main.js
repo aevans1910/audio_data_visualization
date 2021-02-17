@@ -12,6 +12,7 @@ import verticalBarsRenderer from './verticalBarRenderer.js'
 import verticalBarsMonoRenderer from './verticalBarsMonoRenderer.js'
 import radialRayRenderer from './radialRayRenderer.js'
 import boxesRenderer from'./boxesRenderer.js'
+import spiralRenderer from './spiralRenderer.js'
 
 
 // --------------------------------------------------------
@@ -89,7 +90,8 @@ function render() {
 	// circleCenterRenderer(frequencyArray, ctx, centerX, centerY)
 	// circleGridRenderer(frequencyArray, ctx, 300, 300)
 	// circleRenderer(frequencyArray, ctx, centerX, centerY, radius)
-	boxesRenderer(frequencyArray, ctx, 300, 300)
+	// boxesRenderer(frequencyArray, ctx, 300, 300)
+	spiralRenderer(frequencyArray, ctx, 300, 300)
 
 	// Set up the next animation frame
 	requestAnimationFrame(render)
